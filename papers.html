@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Papers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM - Gabriel Greenberg Website
+           ===========================================
+
+           COLORS:
+           - Primary text: rgb(88,88,88)
+           - Secondary text: #666
+           - Dark text: #444
+           - Headings: black
+           - Links: navy
+           - Active page: #7744bb (violet)
+           - Section headings: #7744bb (violet)
+
+           SPACING:
+           - Gap between cells: 20px
+           - Cell padding: 20px
+           - Content padding: 20px sides, 40px bottom
+           - Menu top margin: 10px
+           - Border radius: 8px
+
+           BACKGROUNDS:
+           - Cells: white (solid)
+           - Menu bar: rgba(255,255,255,0.8)
+           - Content wrapper: rgba(255,255,255,0.5)
+
+           TYPOGRAPHY:
+           - Font: Inter (Google Fonts)
+           - Body: 14px, weight 400
+           - Menu: 14pt, weight 500
+           - Headings: weight 500
+           - Line height: 1.5 (body), 1.6 (bio text)
+
+           MAX WIDTHS:
+           - Content area: 1000px
+           - Width: 80%
+
+           =========================================== */
+
+        html {
+            height: 100%;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/purple.jpg) no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+        }
+        /* Fix for tablets and phones */
+        @media screen and (max-width: 1024px) {
+            body::before {
+                display: none;
+            }
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .page-header {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .page-title {
+            color: black;
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0;
+        }
+        .view-toggle {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+        }
+        .view-toggle a {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .view-toggle a:hover {
+            color: navy;
+            text-decoration: none;
+        }
+        .view-toggle a.active-view {
+            color: navy;
+        }
+        .paper-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .section-label {
+            width: 160px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 2px;
+        }
+        .papers-column {
+            flex: 1;
+            min-width: 0;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .paper-section {
+            margin-bottom: 20px;
+        }
+        .paper-title {
+            color: black;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .paper-coauthor {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        .paper-citation {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .paper-abstract {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            margin-left: 20px;
+            color: #444;
+        }
+        .paper-links {
+            margin-top: 8px;
+            margin-left: 20px;
+        }
+        .paper-links a {
+            color: navy;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 13px;
+        }
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+        .contents {
+            line-height: 2.0;
+        }
+        .contents li {
+            color: rgb(88,88,88);
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .year-header {
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0 0 25px 0;
+            padding: 0;
+            line-height: 1;
+        }
+        #papers-container {
+            min-height: 200px;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            /* Menu: keep horizontal, make compact */
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+
+            /* Content wrapper: wider on mobile */
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+
+            /* Main cell adjustments */
+            .main-cell {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            /* Paper rows: stack label above papers */
+            .paper-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .section-label {
+                width: 100%;
+                padding-top: 0;
+                font-size: 15px;
+            }
+
+            /* Content padding adjustments */
+            .content {
+                padding: 15px 10px 30px 10px;
+            }
+
+            /* Page header */
+            .page-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Extra small screens */
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+
+            /* Tighter padding */
+            .main-cell {
+                padding: 15px;
+            }
+
+            /* Typography adjustments */
+            .page-title {
+                font-size: 20px;
+            }
+            .paper-title {
+                font-size: 14px;
+            }
+            .paper-abstract {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+            .paper-links {
+                margin-left: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html" class="active">Papers</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <div class="page-header">
+                    <h1 class="page-title">Papers</h1>
+                    <div class="view-toggle">
+                        <a id="view-topic" class="active-view" onclick="showByTopic()">by topic</a>
+                        <span style="color: #ccc;">|</span>
+                        <a id="view-year" onclick="showByYear()">by year</a>
+                    </div>
+                </div>
+                <hr class="section-divider" style="margin-top: 0;">
+                <div id="papers-container">
+                    <!-- Papers will be rendered here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let papersData = null;
+
+        // Fetch the JSON data
+        fetch('papers.json')
+            .then(response => response.json())
+            .then(data => {
+                papersData = data;
+                showByTopic(); // Default view
+            })
+            .catch(error => {
+                console.error('Error loading papers:', error);
+                document.getElementById('papers-container').innerHTML = '<p>Error loading papers data.</p>';
+            });
+
+        function renderPaper(paper) {
+            let html = '<div class="paper-section">';
+
+            // Title with optional status
+            html += `<div class="paper-title">${paper.title}`;
+            if (paper.status) {
+                html += ` <span style="color: #999;">(${paper.status})</span>`;
+            }
+            html += '</div>';
+
+            // Coauthors
+            if (paper.coauthors) {
+                html += `<div class="paper-coauthor">${paper.coauthors}</div>`;
+            }
+
+            // Citation
+            if (paper.citation) {
+                html += `<div class="paper-citation">${paper.citation}</div>`;
+            }
+
+            // Abstract
+            if (paper.abstract) {
+                html += `<div class="paper-abstract">${paper.abstract}`;
+                if (paper.extraHtml) {
+                    html += `<br>${paper.extraHtml}`;
+                }
+                if (paper.contentsHtml) {
+                    html += paper.contentsHtml;
+                }
+                html += '</div>';
+            }
+
+            // Links
+            const links = paper.links;
+            if (links && Object.keys(links).length > 0) {
+                html += '<div class="paper-links">';
+                if (links.pdf) {
+                    html += `<a href="${links.pdf}">PDF</a>`;
+                }
+                if (links.philpapers) {
+                    html += `<a href="${links.philpapers}">PhilPapers</a>`;
+                }
+                if (links.scholar) {
+                    html += `<a href="${links.scholar}">Google Scholar</a>`;
+                }
+                if (links.external) {
+                    html += `<a href="${links.external}">${links.externalLabel || 'Link'}</a>`;
+                }
+                html += '</div>';
+            }
+
+            html += '</div>';
+            return html;
+        }
+
+        function showByTopic() {
+            if (!papersData) return;
+
+            // Update toggle styles
+            document.getElementById('view-topic').classList.add('active-view');
+            document.getElementById('view-year').classList.remove('active-view');
+
+            const container = document.getElementById('papers-container');
+            let html = '';
+            const topicOrder = Object.keys(papersData.topics);
+
+            topicOrder.forEach((topicId, index) => {
+                const topicName = papersData.topics[topicId];
+                const topicPapers = papersData.papers.filter(p => p.topic === topicId);
+
+                if (topicPapers.length > 0) {
+                    // Add divider between sections (not before first)
+                    if (index > 0) {
+                        html += '<hr class="section-divider">';
+                    }
+
+                    // Create row with label on left, papers on right
+                    html += '<div class="paper-row">';
+                    html += `<div class="section-label">${topicName}</div>`;
+                    html += '<div class="papers-column">';
+                    topicPapers.forEach(paper => {
+                        html += renderPaper(paper);
+                    });
+                    html += '</div>';
+                    html += '</div>';
+                }
+            });
+
+            container.innerHTML = html;
+        }
+
+        function showByYear() {
+            if (!papersData) return;
+
+            // Update toggle styles
+            document.getElementById('view-year').classList.add('active-view');
+            document.getElementById('view-topic').classList.remove('active-view');
+
+            // Sort papers by year (descending), with null/in-progress at top
+            const sortedPapers = [...papersData.papers].sort((a, b) => {
+                if (a.year === null) return -1;
+                if (b.year === null) return 1;
+                return b.year - a.year;
+            });
+
+            // Group by year
+            const yearGroups = {};
+            sortedPapers.forEach(paper => {
+                const yearKey = paper.year === null ? 'In Progress' : paper.year;
+                if (!yearGroups[yearKey]) {
+                    yearGroups[yearKey] = [];
+                }
+                yearGroups[yearKey].push(paper);
+            });
+
+            // Get sorted years
+            const years = Object.keys(yearGroups).sort((a, b) => {
+                if (a === 'In Progress') return -1;
+                if (b === 'In Progress') return 1;
+                return parseInt(b) - parseInt(a);
+            });
+
+            const container = document.getElementById('papers-container');
+            let html = '';
+
+            years.forEach((year, index) => {
+                // Add divider between sections (not before first)
+                if (index > 0) {
+                    html += '<hr class="section-divider">';
+                }
+
+                // Create row with year on left, papers on right
+                html += '<div class="paper-row">';
+                html += `<div class="section-label">${year}</div>`;
+                html += '<div class="papers-column">';
+                yearGroups[year].forEach(paper => {
+                    html += renderPaper(paper);
+                });
+                html += '</div>';
+                html += '</div>';
+            });
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

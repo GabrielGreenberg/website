@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            background: url(images/purple.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100%;
+        }
+        /* Fix for iOS/tablet/mobile background-attachment: fixed issue */
+        @media screen and (max-width: 1024px) {
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .page-title {
+            color: black;
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .event-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+        .event-row:last-child {
+            margin-bottom: 0;
+        }
+        .year-label {
+            width: 50px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+            padding-top: 2px;
+        }
+        .event-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .event-title {
+            color: black;
+            font-weight: 400;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .event-title a {
+            color: navy;
+            text-decoration: none;
+        }
+        .event-title a:hover {
+            text-decoration: underline;
+        }
+        .event-description {
+            color: #444;
+            line-height: 1.6;
+            margin-left: 15px;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            /* Menu: keep horizontal, make compact */
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+
+            /* Content wrapper: wider on mobile */
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+
+            /* Main cell adjustments */
+            .main-cell {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            /* Event rows: stack year above event */
+            .event-row {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .year-label {
+                width: 100%;
+                padding-top: 0;
+                font-size: 15px;
+            }
+
+            /* Content padding adjustments */
+            .content {
+                padding: 15px 10px 30px 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Extra small screens */
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+
+            /* Tighter padding */
+            .main-cell {
+                padding: 15px;
+            }
+
+            /* Typography adjustments */
+            .page-title {
+                font-size: 20px;
+            }
+            .event-title {
+                font-size: 14px;
+            }
+            .event-description {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html" class="active">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <h1 class="page-title">Events</h1>
+                <hr class="section-divider">
+
+                <div class="event-row">
+                    <div class="year-label">2025</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://infoslime.weebly.com/">SLIME 4</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label">2024</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://infoslime.weebly.com/slime-3.html">SLIME 3</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label">2023</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://www.metadillo.org/iconicity-and-cognition-2023.html">Iconicity and Cognition</a> <span style="font-weight: 400;">(Stanford)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label"></div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://infoslime.weebly.com/slime-2.html">SLIME 2</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label">2022</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://infoslime.weebly.com/slime-1.html">SLIME (Studies in Language, Information, Meaning, and Expression)</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label">2015</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="https://www.metadillo.org/iconicity-2015.html">Iconicity</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-row">
+                    <div class="year-label">2012</div>
+                    <div class="event-content">
+                        <div class="event-title">
+                            <a href="http://gjgreenberg.bol.ucla.edu/visnar/">Visual Narrative</a> <span style="font-weight: 400;">(UCLA)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

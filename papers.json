@@ -1,0 +1,262 @@
+{
+  "topics": {
+    "iconicity": "Iconic and symbolic representation",
+    "perception": "Contents of perception",
+    "maps": "Semantics of pictures and maps",
+    "film": "Film as discourse",
+    "modality": "Emoji, modality, and meaning",
+    "dissertation": "Dissertation",
+    "online": "On-line publications",
+    "editor": "Editorial work"
+  },
+  "papers": [
+    {
+      "id": "iconic-symbolic",
+      "title": "The Iconic-Symbolic Spectrum",
+      "year": 2023,
+      "topic": "iconicity",
+      "citation": "<i>Philosophical Review</i> 132 (4): 579-627 (2023)",
+      "abstract": "A theory of iconic and symbolic representation.",
+      "links": {
+        "pdf": "docs/iconic-symbolic.pdf",
+        "philpapers": "https://philpapers.org/rec/GRETIS-3",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:roLk4NBRz8UC"
+      }
+    },
+    {
+      "id": "varieties",
+      "title": "Varieties of Iconicity",
+      "year": 2015,
+      "topic": "iconicity",
+      "coauthors": "with Valeria Giardino",
+      "citation": "<i>Review of Philosophy and Psychology</i> 6 (1):1-25 (2015)",
+      "abstract": "An overview of the varieties of iconic representational systems and their functional properties.",
+      "links": {
+        "pdf": "docs/varieties.pdf",
+        "philpapers": "https://philpapers.org/rec/GIAIVO-2",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:9yKSN-GCB0IC"
+      }
+    },
+    {
+      "id": "visual-content",
+      "title": "The Structure of Visual Content",
+      "year": 2025,
+      "topic": "perception",
+      "citation": "forthcoming, <i>Mind</i>",
+      "abstract": "A structured theory of visual content, in which clusters of objects and properties populate direction-filled visual arrays.",
+      "links": {
+        "pdf": "docs/structure_mind.pdf"
+      }
+    },
+    {
+      "id": "visual-objects",
+      "title": "Visual Objects",
+      "year": null,
+      "topic": "perception",
+      "status": "in progress",
+      "abstract": "Visual singular contents are intentional objects, not concrete referents or perceptual modes of presentation.",
+      "links": {}
+    },
+    {
+      "id": "retinotopy",
+      "title": "Neural Images: On Retinotopy and Representation",
+      "year": null,
+      "topic": "perception",
+      "status": "in progress",
+      "abstract": "An argument for the iconic status of retinotopic regions, based on analogies between convolutional neural networks and visual processing in the brain.",
+      "links": {}
+    },
+    {
+      "id": "map-semantics",
+      "title": "Map Semantics and the Geography of Meaning",
+      "year": 2024,
+      "topic": "maps",
+      "citation": "In Ernest Lepore & Luvell Anderson (eds.), <i>The Oxford Handbook of Applied Philosophy of Language</i>. Oxford University Press, pp. 489-522 (2024)",
+      "abstract": "Situates maps within the broader landscape of semiotic meaning, then develops a projection-based semantics for maps, focusing on space, lines, and labels.",
+      "links": {
+        "pdf": "docs/maps.pdf",
+        "philpapers": "https://philpapers.org/rec/GREMSA-5",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:LkGwnXOMwfcC"
+      }
+    },
+    {
+      "id": "kulvicki-review",
+      "title": "Review of <i>Modeling the Meanings of Pictures</i>",
+      "year": 2022,
+      "topic": "maps",
+      "citation": "<i>Philosophical Review</i> 131 (3):373-378 (2022)",
+      "abstract": "Review of John Kulvicki's 2021 book on pictorial meaning.",
+      "links": {
+        "pdf": "docs/kulvicki.pdf",
+        "philpapers": "https://philpapers.org/rec/GREMTM-4",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:UebtZRa9Y70C"
+      }
+    },
+    {
+      "id": "pictorial-space",
+      "title": "Semantics of Pictorial Space",
+      "year": 2021,
+      "topic": "maps",
+      "citation": "<i>Review of Philosophy and Psychology</i> 12 (4):847-887 (2021)",
+      "abstract": "Foundations of projection-based semantics for pictorial representation.",
+      "links": {
+        "pdf": "docs/geometry.pdf",
+        "philpapers": "https://philpapers.org/rec/GRESOP-5",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:YsMSGLbcyi4C"
+      }
+    },
+    {
+      "id": "tagging",
+      "title": "Tagging: semantics at the iconic/symbolic interface",
+      "year": 2019,
+      "topic": "maps",
+      "citation": "In Julian J. Schlöder, Dean McHugh & Floris Roelofsen (eds.), <i>Proceedings of the 22nd Amsterdam Colloquium</i>, pp. 11-20 (2019)",
+      "abstract": "A compositional semantic analysis of tagging, in which regions of a picture are annotated with words or other symbols.",
+      "links": {
+        "pdf": "docs/tagging.pdf",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:WF5omc3nYNoC"
+      }
+    },
+    {
+      "id": "content-target",
+      "title": "Content and Target in Pictorial Representation",
+      "year": 2018,
+      "topic": "maps",
+      "citation": "<i>Ergo</i> 5 (33) (2018)",
+      "abstract": "Introduces a view of pictorial representation which distinguishes a picture's target, its singular content, and argues against descriptivist theories of singular content.",
+      "links": {
+        "pdf": "docs/content.pdf",
+        "philpapers": "https://philpapers.org/rec/GRECAT-10",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:2osOgNQ5qMEC"
+      }
+    },
+    {
+      "id": "beyond-resemblance",
+      "title": "Beyond Resemblance",
+      "year": 2013,
+      "topic": "maps",
+      "citation": "<i>Philosophical Review</i> 122 (2):215-287 (2013)",
+      "abstract": "An extended argument against resemblance-based theories of depiction, and in favor of a projection-based approach.",
+      "links": {
+        "pdf": "docs/beyond.pdf",
+        "philpapers": "https://philpapers.org/rec/GREBR-7",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:u5HHmVD_uO8C"
+      }
+    },
+    {
+      "id": "spatial-coherence",
+      "title": "Spatial Coherence in Narrative Film",
+      "year": 2024,
+      "topic": "film",
+      "citation": "In Gerhard Preyer (ed.), <i>Discourse and Coherence</i>",
+      "abstract": "A theory of film space: its structure, what makes it coherent, and how spatial coherence interacts with viewpoint constraints.",
+      "links": {
+        "pdf": "docs/coherence.pdf"
+      }
+    },
+    {
+      "id": "showing-seeing",
+      "title": "Showing Seeing in Film",
+      "year": 2021,
+      "topic": "film",
+      "coauthors": "with Samuel Cumming, Elsi Kaiser, and Rory Kelly",
+      "citation": "<i>Ergo</i> 7 (27):730-756 (2021)",
+      "abstract": "An investigation of two film conventions for representing what a character sees: point-of-view (POV) and sight link; an extension of our project on viewpoint constraints in film.",
+      "links": {
+        "pdf": "docs/pov.pdf",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=54nv5W8AAAAJ&citation_for_view=54nv5W8AAAAJ:2osOgNQ5qMEC"
+      }
+    },
+    {
+      "id": "viewpoint-coherence",
+      "title": "Conventions of Viewpoint Coherence in Film",
+      "year": 2017,
+      "topic": "film",
+      "coauthors": "with Samuel Cumming and Rory Kelly",
+      "citation": "<i>Philosophers' Imprint</i> 17 (1):1-28 (2017)",
+      "abstract": "A defense of a semantic view of film, as against a purely pragmatic view, and a close analysis of two semantic conventions: the X-Constraint (a.k.a. the 180° rule) and the T-Constraint.",
+      "extraHtml": "<a href=\"https://www.youtube.com/watch?v=HWYXi00zG7c\">A video essay</a> by Koby Leff based on this paper.",
+      "links": {
+        "pdf": "docs/film.pdf",
+        "philpapers": "https://philpapers.org/rec/CUMCOV",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:d1gkVwhDpl0C"
+      }
+    },
+    {
+      "id": "emoji",
+      "title": "A semantics of face emoji in discourse",
+      "year": 2023,
+      "topic": "modality",
+      "coauthors": "with Patrick Georg Grosz, Christian De Leon, and Elsi Kaiser",
+      "citation": "<i>Linguistics and Philosophy</i> 46 (4):905-957 (2023)",
+      "abstract": "A semantic account of the contribution of face emoji to linguistic discourse.",
+      "links": {
+        "pdf": "docs/emoji.pdf",
+        "philpapers": "https://philpapers.org/rec/GROASO-3",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:Se3iqnhoufwC"
+      }
+    },
+    {
+      "id": "counterfactuals",
+      "title": "Counterfactuals and modality",
+      "year": 2021,
+      "topic": "modality",
+      "citation": "<i>Linguistics and Philosophy</i> 44 (6):1255-1280 (2021)",
+      "abstract": "An argument for the strict analysis of counterfactual conditionals, and against the variable analysis, based on interactions between subjunctive modals and counterfactual conditionals.",
+      "links": {
+        "pdf": "docs/counterfactuals.pdf",
+        "philpapers": "https://philpapers.org/rec/GRECAM-6",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:eQOLeE2rZwMC"
+      }
+    },
+    {
+      "id": "dissertation",
+      "title": "The Semiotic Spectrum",
+      "year": 2011,
+      "topic": "dissertation",
+      "citation": "Dissertation (2011)",
+      "links": {
+        "pdf": "docs/spectrum.pdf",
+        "philpapers": "https://philpapers.org/rec/GRETSS-2",
+        "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=3iuRL4IAAAAJ&citation_for_view=3iuRL4IAAAAJ:u-x6o8ySG0sC"
+      }
+    },
+    {
+      "id": "pictorial-grammar",
+      "title": "Pictorial Grammar",
+      "year": 2010,
+      "topic": "online",
+      "coauthors": "with Dawn Chan",
+      "citation": "<i>Paris Review Daily</i>, 12/21/10",
+      "links": {
+        "external": "https://www.theparisreview.org/blog/2010/12/21/pictorial-grammar/",
+        "externalLabel": "The Paris Review"
+      }
+    },
+    {
+      "id": "seven-puzzles",
+      "title": "Seven Puzzles of Pictorial Representation",
+      "year": 2014,
+      "topic": "online",
+      "citation": "<i>Aesthetics for Birds</i>, 9/7/14",
+      "abstract": "A structured theory of visual content, in which clusters of objects and properties populate direction-filled visual arrays.",
+      "links": {
+        "pdf": "https://drive.google.com/file/d/1Krnnyi7-ovVOSvK4C8r5QbW6Vb6mLP2b/view?usp=drive_link"
+      }
+    },
+    {
+      "id": "special-issue",
+      "title": "Special issue, \"Pictorial and Diagrammatic Representation\"",
+      "year": 2015,
+      "topic": "editor",
+      "coauthors": "ed. with Valeria Giardino",
+      "citation": "<i>Review of Philosophy and Psychology</i> 6 (1) (2015)",
+      "abstract": "Contents",
+      "contentsHtml": "<ol class=\"contents\"><li><a href=\"https://drive.google.com/file/d/1PAqLJLAnjNGZWwDGTaoOqMMLsnSSiRWI/view?usp=drive_link\">Introduction: Varieties of Iconicity</a> <br>Valeria Giardino and Gabriel Greenberg</li><li><a href=\"https://drive.google.com/file/d/1Br8w-O5keMbmt9nFqikT0HsQey3lQmsJ/view?usp=drive_link\">Wayfinding: Notes on the 'Public' as Interactive</a><br>Patrick Maynard</li><li><a href=\"https://drive.google.com/file/d/1VwtjOQeo99Li8j2VYD5FvIFYgj4tNCNC/view?usp=drive_link\">The Mystery of Deduction and Diagrammatic Aspects of Representation</a><br>Sun-Joo Shin</li><li><a href=\"https://drive.google.com/file/d/1LXp-bF9IIYOFYwtncmBQUQajp_kJ6T_2/view?usp=drive_link\">Meaning and Demonstration</a><br>Matthew Stone and Una Stojnic</li><li><a href=\"https://drive.google.com/file/d/1jeT1Ox-QmztOhLFmeSQt3hcSm2rW6M73/view?usp=drive_link\">The Cognitive Design of Tools of Thought</a><br>Barbara Tversky</li><li><a href=\"https://drive.google.com/file/d/1lnb-B5HAGnjdcNfuBz1BC9R_IkTzPxfo/view?usp=drive_link\">Diagrams as Tools for Scientific Reasoning</a><br>Adele Abrahamsen and William Bechtel</li><li><a href=\"https://drive.google.com/file/d/12z1GgF_JxfWl4RcbBESR_bO8gbSV9kwL/view?usp=drive_link\">Street Signs and Ikea Instruction Sheets: Pragmatics and Pictorial Communication</a><br>Marcello Frixione and Antonio Lombardi</li><li><a href=\"https://drive.google.com/file/d/1cet4EtUpzEclDVhx6lESFro6fjLl0gG7/view?usp=drive_link\">Pictures Have Propositional Content</a><br>Alex Grzankowski</li><li><a href=\"https://drive.google.com/file/d/1CN-GM0jE3sR2_QlA8NaBxiFqdSYB6APk/view?usp=drive_link\">Analog Representation and the Parts Principle</a><br>John Kulvicki</li><li><a href=\"https://drive.google.com/file/d/13mA8MmY-C-SydfqaZ8AFY5UXcDbohapU/view?usp=drive_link\">Trompe l'oeil and the Dorsal/Ventral Account of Pictorial Perception</a><br>Bence Nanay</li></ol>",
+      "links": {
+        "external": "https://link.springer.com/journal/13164/volumes-and-issues/6-1?page=1",
+        "externalLabel": "Springer"
+      }
+    }
+  ]
+}

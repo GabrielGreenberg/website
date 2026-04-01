@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Talks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(images/purple.jpg) no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+        }
+        /* Fix for tablets and phones */
+        @media screen and (max-width: 1024px) {
+            body::before {
+                display: none;
+            }
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .page-title {
+            color: black;
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0 0 10px 0;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .talk-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .year-label {
+            width: 50px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+            padding-top: 2px;
+        }
+        .talks-column {
+            flex: 1;
+            min-width: 0;
+        }
+        .talk-section {
+            margin-bottom: 18px;
+        }
+        .talk-section:last-child {
+            margin-bottom: 0;
+        }
+        .talk-title {
+            color: black;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .talk-links {
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        .talk-links a {
+            color: navy;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 13px;
+        }
+        .talk-links a:hover {
+            text-decoration: underline;
+        }
+        .talk-location {
+            color: #666;
+            font-size: 13px;
+            margin-left: 15px;
+            line-height: 1.5;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            /* Menu: keep horizontal, make compact */
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+
+            /* Content wrapper: wider on mobile */
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+
+            /* Main cell adjustments */
+            .main-cell {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            /* Talk rows: stack year above talks */
+            .talk-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .year-label {
+                width: 100%;
+                padding-top: 0;
+                font-size: 16px;
+            }
+
+            /* Content padding adjustments */
+            .content {
+                padding: 15px 10px 30px 10px;
+            }
+
+            /* Talk location adjustments */
+            .talk-location {
+                margin-left: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Extra small screens */
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+
+            /* Tighter padding */
+            .main-cell {
+                padding: 15px;
+            }
+
+            /* Typography adjustments */
+            .page-title {
+                font-size: 20px;
+            }
+            .talk-title {
+                font-size: 14px;
+            }
+            .talk-location {
+                margin-left: 5px;
+                font-size: 12px;
+            }
+            .talk-links a {
+                margin-right: 10px;
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="talks.html" class="active">Talks</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <h1 class="page-title">Talks</h1>
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2025</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Productivity in iconic and symbolic representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/11ncii6yPPdR6H-lvdIpDCObsortrR8Z8/view?usp=sharing">Slides</a>
+                            </div>
+                            <div class="talk-location">Central New York Philosophy of Language Workshop, 10.17.25</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Neural images: retinotopy and representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1MkgF054ncztd7ExhNu036xNYaJ2zTlm0/view?usp=sharing">PhiVis Slides</a>
+                                <a href="https://drive.google.com/file/d/1sgvzfDAZCZqYYBOQDj6N-HDWMDMQJWUs/view?usp=drive_link">NYU Slides</a>
+                            </div>
+                            <div class="talk-location">PhiVis, VSS, 5.20.25</div>
+                            <div class="talk-location">Representational Format Workshop, NYU, 11.26.24</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Iconicity and mental representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1c05o__5-qIgMmAGp_hVqHR1KfWadZ_6P/view?usp=sharing">Slides</a>
+                            </div>
+                            <div class="talk-location">Philosophy Colloquium, ASU, 3.28.25</div>
+                            <div class="talk-location">Philosophy Colloquium, CUNY 4.9.25</div>
+                            <div class="talk-location">Philosophy Colloquium, Wash U, St. Louis 2.27.25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2024</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Comments on Kartik Chandra's 'What you expect when you're expressing'"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1JQJ-hhqfr6Ga6tXZejPhIjHceyF0gDyh/view?usp=drive_link">Handout</a>
+                            </div>
+                            <div class="talk-location">2024 SLIME 3 Workshop, UCLA, 9.26.24</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Guidelines: semantics, power, action"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1Te2j9YEujlQpnZIMCpPjr5Ua0hfjD8VD/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">2024 NAND Conference, Alghero, 9.25.24</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Content and target in perception and memory"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1qH-WVWgteQbmvt7gO525CHeeTgDpLowF/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">Accuracy and memory workshop, Universidade Federal de Goiás (online), 2.28.24</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"The Iconic-Symbolic Spectrum"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1Wy9km9YmGeVvhYYX6IleIsc4RR86ro0n/view">Slides v1</a>
+                                <a href="https://drive.google.com/file/d/1yqlWX4_ji9tgE759aRNGxGoIHS6lRqEu/view?usp=drive_link">Slides v2</a>
+                            </div>
+                            <div class="talk-location">2024 Nanay Group, University of Antwerp, 5.2.24</div>
+                            <div class="talk-location">2021 Philosophy Colloquium, Stanford, 10.22.21</div>
+                            <div class="talk-location">2021 Mind and Language Workshop, University of São Paulo 10.15.21</div>
+                            <div class="talk-location">2020 Aesthetics, Cognitive Science, and the Imagined World Workshop, Princeton 11.6.20</div>
+                            <div class="talk-location">2020 Philosophy Colloquium, Institut Jean Nicod 10.9.20</div>
+                            <div class="talk-location">2019 Philosophy of Mathematics Seminar, Pitzer College 10.14.19</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2023</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Iconic Computation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1sV68xp_AXgzkh9Um1zHFGZ1v8nQxSSa5/view?usp=drive_link">Slides</a>
+                                <a href="https://drive.google.com/file/d/1UcXv5fRmKEwOIsIW2T2GwqNUwLptMnBB/view?usp=drive_link">Handout</a>
+                            </div>
+                            <div class="talk-location">2023 Seminar in Logic and Formal Philosophy, Stanford 10.18.23</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Pictures in the Head"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1KC0i0JTDZL1y9n4Ai9JrWNVTzSONVH4B/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">2023 Iconicity and Cognition Workshop, CSLI, Stanford, 9.21.23</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Chaos Cinema and Coherence Cinema"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/13mcv1iYgkhiB8kMjfs993616IgvScHZg/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">2023 Society for the Cognitive Studies of the Moving Image, UNC, Wilmington, 6.3.23</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"The Structure of Visual Content"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1SJu8Sa2npzvwWSYDOGG3pb70ntIP8RI3/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1TJHukxL4Ui1KwFqDyM6NhWC-tm52Woii/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2023 Symposium on the syntax of consciousness, CPA, Toronto, 5.29.23</div>
+                            <div class="talk-location">2018 Workshop on Non-propositional Intentionality, ANU, Canberra, 7.3.18</div>
+                            <div class="talk-location">2018 Philosophy MountainWorkshop, Telluride, 3.2.18</div>
+                            <div class="talk-location">2018 Symposium: Varieties of Mental Representation, Eastern APA, 1.6.18</div>
+                            <div class="talk-location">2017 Perception Conference in Paris, Institut Jean-Nicod, 7.10.17</div>
+                            <div class="talk-location">2017 Mind and Language Conference, University of Turin, 7.5.17</div>
+                            <div class="talk-location">2016 Guest lecture, Philippe Schlenker's graduate course on sign language and gesture, NYU, 9.26.16</div>
+                            <div class="talk-location">2016 Pictures and Propositions Conference, London Aesthetics Forum, 6.14.16</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2022</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Visual Semantics"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/18Xw6JiAB84TMtpGBzSP0Dcp0V25_qtny/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2022 Super Semantics workshop, CreteLing, Crete, 7.20.22</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"The Tree of Meaning" <i>(with Sam Cumming)</i></div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1N-uHZwh3SR5Uo4pVJLlJ4rzJLQ8rpdXR/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1yacSP64MUspq1Esa1wx-TrtrtywIQ4j8/view">Video</a>
+                            </div>
+                            <div class="talk-location">2022 SLIME Workshop, UCLA, 6.11.22</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Comments on Mariela Aguilera's 'Journey planning: A cartography of practical reasoning'"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1mFNc6oNU4ivmiIkCKINQITC_a7xECrVs/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2022 Mental Format Workshop, York University 5.4.22</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2021</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"The Semantics of Face Emoji in Discourse" <i>(with Patrick Grosz, Elsi Kaiser, and Christian DeLeon)</i></div>
+                            <div class="talk-location">2021 Colloquium, Super Linguistics Colloquium 1.22.21</div>
+                            <div class="talk-location">2020 UCLA Mind and Language Workshop 12.14.20</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2019</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Tagging: Semantics at the Iconic/Symbolic Interface"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1Ej8KZXfaAVJGPf_iGRMkQqI7wkXZgxt9/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1cVwCKQJP8-oeVHBQIwr620e7tQQxVKg5/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2019 Invited talk, Amsterdam Colloquium, ILLC, 12.20.19</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Orders of Iconicity"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/u/1/d/1PqwbjmLsqbaouzIU1EhztaZtMH4qJ7PK/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">2019 Workshop on Multi-modal Communication, UConn, 12.15.19</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Iconicity and Intentionality"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1W8-q5-x6t4hfjRlyQMwv6x5osJyY3lMG/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1PyMyeu1ICMpSspV_BxBKlL5iMDKow7yl/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2019 XVIII Congreso Interamericano de Filosofia, Bogota, 10.18.19</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"World-Icon-Symbol"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1v3gRfMbhRz8iZ4xZ_0TmmrIvQwt2nw_c/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2019 Philosophy and Cognitive Science Workshop, PUCP, Lima, 4.9.19</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Fregean Particularism and Perceptual Coreference: Comments on Susanna Schellenberg's The Unity of Perception"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1d_wLe6Ud_4Ix4dUC6e4oZJ-Rw1SWtukD/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2019 XVIII Inter-American Congress of Philosophy, Bogota, 10.18.19</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Visual Objects"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1jF38B4djN7X6PUFZExATn3vmHbck3TE3/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1S75eYDXKBODLIIIXb469IdU6Y3qks8bQ/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2019 Philosophy Colloquium, Cal Sate LA, 4.9.19</div>
+                            <div class="talk-location">2018 Philosophy Colloquium, Boston University, 12.7.18</div>
+                            <div class="talk-location">2018 Philosophy Colloquium, University of Southern California, 12.3.18</div>
+                            <div class="talk-location">2018 Philosophy Talk, Metaphysics and Mind Group, University of Toronto, 10.11.18</div>
+                            <div class="talk-location">2018 English-German Picture Theory Group, Dartmouth, 8.22.18</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Dynamic Semantics for Moving Pictures" <i>(with Sam Cumming, Rory Kelly, and Elsi Kaiser)</i></div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1eAXpnjtYk4KQfTbCUFHbgjj_HEUtsmBd/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1jQM7c4fjnOxErZ1RFLKuTHN3XYPsM-7g/view?usp=drive_link">Handout v1</a>
+                                <a href="https://drive.google.com/file/d/1KVZx05SuM97f4GR-ZH3yvYKyVSYGs6sY/view">Handout v2</a>
+                            </div>
+                            <div class="talk-location">2019 GLOW (Generative Linguistics in the Old World), Oslo, 5.11.19</div>
+                            <div class="talk-location">2019 Philosophy of Language Workshop, Rutgers, 4.27.19</div>
+                            <div class="talk-location">2018 Special workshop on film, ANU, Canberra, 7.4.18</div>
+                            <div class="talk-location">2018 Society for the Cognitive Studies of the Moving Image, Montana State University, 6.15.18</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2018</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Axial Symmetry as Focal Point in Spatial Interpretation of Film" <i>(presented by Sam Cumming; with Sam Cumming and Rory Kelly)</i></div>
+                            <div class="talk-location">2018 Workshop on Non-propositional Intentionality, ANU, Canberra, 7.3.18</div>
+                            <div class="talk-location">2018 Society for the Cognitive Studies of the Moving Image, Montana State University, 6.15.18</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Semantics of Pictures" and "Semantics of Film"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1IFeqytfCh6aoOcqj6LzMk0hXomZnikUU/view?usp=drive_link">Slides for "Semantics of Pictures"</a>
+                                <a href="https://drive.google.com/file/d/1F4Cf69rM6_aVpw2H-T965mdrQpr4l1rg/view">Handout for "Semantics of Pictures"</a>
+                                <a href="https://drive.google.com/file/d/1X9nReqMtS2Ues2HNZz50QQ_ms321Kh8k/view">Slides for "Semantics of Film"</a>
+                                <a href="https://drive.google.com/file/d/1fN6BaKW5xCj4b9lBkgctNAIuH2j8mHga/view">Handout for "Semantics of Film"</a>
+                            </div>
+                            <div class="talk-location">2018 Guest speaker (with Neil Cohn), 2-day workshop-tutorial: The formal analysis and semantic interpretation of pictorial representations, UConn 3.16-17.18</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2016</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Content and Target in Pictorial Representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1VAe6Zz0MTat16m6lWSwyfqkOGQ8DDYhd/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/18pXFbetRJttkgdk9J50nJZnSfZcgi5Cz/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2016 Philosophy Colloquium, Washington University in St. Louis, 9.16.16</div>
+                            <div class="talk-location">2016 Philosophy Colloquium, University of Texas at Austin, 9.2.16</div>
+                            <div class="talk-location">2016 Philosophy Colloquium, Arizona State University, 3.18.16</div>
+                            <div class="talk-location">2016 Invited talk, Central APA, 3.3.16</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2015</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Systems of Depiction, Systems of Vision"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1eVCdvtn-4yQSNza25CQLfFr-HcNq-yCh/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1teGND3lYpgEX85IuI3YC-Mk7k6yL4wVu/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2015 UCLA Iconicity Workshop, 6.6.15</div>
+                            <div class="talk-location">2015 Philosophy Colloquium, UC Riverside, 5.27.15</div>
+                            <div class="talk-location">2015 Cognitive Science Society Keynote, UCLA, 4.25.15</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"The Geometry of Pictorial Representation"</div>
+                            <div class="talk-location">2015 Philosophy Colloquium, UC Davis, 4.24.15</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2014</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Subjective Point of View in Visual Sequences"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/18LBjq3WdEr1hOw7-j_g7sSmetU_4KnOb/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2014 Society for Philosophy and Psychology, UBC, 6.20.14</div>
+                            <div class="talk-location">2014 Society for the Cognitive Studies of the Moving Image, Franklin & Marshall College <i>(presented by Sam Cumming)</i>, 6.13.14</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Reference and Predication in Pictorial Representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/19dg4jz8v-U4LmMcFLdzHdhO1iMiytPa8/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1vM0gu1P5OxQKOgeninsMC-QMJE7V1fo2/view">Handout v1</a>
+                                <a href="https://drive.google.com/file/d/1QHk7I-MIvChxT4Vg0DYObIt7jfolL3HF/view?usp=drive_link">Handout v2</a>
+                                <a href="https://drive.google.com/file/d/19HX7hxV9Oa71tUrZ97kMW3diq1zU4z5F/view?usp=drive_link">Handout v3</a>
+                            </div>
+                            <div class="talk-location">2014 Barnard-Columbia Philosophy of Perception Workshop, 7.26.14</div>
+                            <div class="talk-location">2014 New Frontiers: Formal Semantics Beyond Spoken Language (with SALT 2014), NYU, 5.28.14</div>
+                            <div class="talk-location">2014 Colloquium, London Aesthetics Forum, 2.19.14</div>
+                            <div class="talk-location">2014 Guest Lecture, Institut Jean Nicod, Paris, 2.17.14</div>
+                            <div class="talk-location">2014 Aesthetics as Philosophy of Perception Lecture Series, University of Antwerp, 2.13.14</div>
+                            <div class="talk-location">2014 Philosophy Colloquium, Ohio State University, 2.7.14</div>
+                            <div class="talk-location">2014 Philosophy Colloquium, University of Arizona, 2.4.14</div>
+                            <div class="talk-location">2013 Philosophy Colloquium, University of British Columbia, 9.13.13</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Natural Conventions"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1wZBL9qD5FkfTyHLi4gWWYzNNcrrTJbjY/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1nFW1MlcjuDv__fy_yx_f_FA6v20VzI4R/view?usp=drive_link">Handout</a>
+                            </div>
+                            <div class="talk-location">2014 Meta-Semantics Workshop, Berkeley, 3.9.14</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2013</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Formal Semiotics"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1pFlWJUkm7TAd72R_xs95y0kkf4Y_efSX/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2013 Workshop on Perception and the Humanities, UCSD</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Conventions of Viewpoint Coherence in Film" <i>(with Sam Cumming and Rory Kelly)</i></div>
+                            <div class="talk-location">2013 Workshop on Perception and Speech Acts, University of Oslo</div>
+                            <div class="talk-location">2012 Communicative Acts Conference, Cornell University</div>
+                            <div class="talk-location">2012 Society for the Cognitive Studies of the Moving Image, Sarah Lawrence College</div>
+                            <div class="talk-location">2012 Semantics Workshop, UCLA</div>
+                            <div class="talk-location">2012 Literature and Cognition Symposium, Haverford College ("The Mathematical Logic of Comics")</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Comments on Philippe Schlenker's 'Anaphora: Insights from Sign Language'"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1jzWKDh0AMY5gx4vrGmNb9ESHLDfL1M6Y/view">Slides</a>
+                                <a href="https://drive.google.com/file/d/1vbUf_ACoztVwkxstnWgpJrpdlY2GQIcK/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2013 Annual Semantics Workshop, Rutgers</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Comments on Christy Mag Huidir's 'Art, Metaphysics, and the Paradox of Standards'"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/u/1/d/1fgX-gHb65RrvFxPGKieiinK-hhi1RjPy/view?usp=drive_link">Slides</a>
+                            </div>
+                            <div class="talk-location">2013 American Society for Aesthetics, Annual Conference</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2012</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"Pictorial Semantics"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1LGq6CX0paZFsSXD-dS23hIogAxeUZXIK/view?usp=drive_link">Handout</a>
+                            </div>
+                            <div class="talk-location">2012 Guest Lecture, Philippe Schlenker's graduate course on sign language semantics, NYU</div>
+                            <div class="talk-location">2010 American Society for Aesthetics, Eastern Division</div>
+                            <div class="talk-location">2010 Context and Meaning Summer School, Central European University, Budapest</div>
+                            <div class="talk-location">2010 Department of Philosophy Colloquium, University of Johannesburg</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Turing's New Machine"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/15CC_Ctlpko_sC1pE3L0UB0xe0dXfow5N/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2012 Brainstorming Turing: Celebrating Alan Turing, UCLA</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Iconic and Symbolic Representation"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1f7F9nw0kCsq6cEeQYU0o-Nq4z80lsSdj/view?usp=drive_link">Handout</a>
+                            </div>
+                            <div class="talk-location">2012 Albritton Society, UCLA</div>
+                            <div class="talk-location">2010 Putney Public Library, Putney, Vermont</div>
+                            <div class="talk-location">2009 Philosophy Grad-Talks, Rutgers University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2011</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"The Geometrical Projection Theory of Depiction"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1zRznUtUVTbUW-gFOx1nm1wq1ph0Xc2a3/view">Slides</a>
+                            </div>
+                            <div class="talk-location">2011 American Society for Aesthetics, Eastern Division</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Beyond Resemblance"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1qvyV-w7oK7wq_bqvdu-8jxNtRe-Kje5R/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2011 Department of Philosophy Colloquium, UCLA</div>
+                            <div class="talk-location">2010 Philosophy Grad-Talks, Rutgers University</div>
+                            <div class="talk-location">2009 Hoernle Seminar, Department of Philosophy Witwatersrand Universtiy, Johannesburg</div>
+                            <div class="talk-location">2009 Guest Lecture, Peter Kivy's Aesthetics graduate seminar, Rutgers University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2009</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"An Argument for the Strict Analysis of Subjunctive Conditionals"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1irNTQaDTwqBP3f55-eqey8V3qgBjvIMZ/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2009 Conditionals Summer School, Central European University, Budapest</div>
+                        </div>
+
+                        <div class="talk-section">
+                            <div class="talk-title">"Tagging: the Semantics of Words in Pictures"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/1LJnMRuGfHVAk0oO8U0_c_SndfgPExD1l/view">Poster</a>
+                            </div>
+                            <div class="talk-location">2009 Aesthetics reading group, Central European University, Budapest</div>
+                            <div class="talk-location">2009 IGERT Perceptual Science poster session, Rutgers University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="talk-row">
+                    <div class="year-label">2008</div>
+                    <div class="talks-column">
+                        <div class="talk-section">
+                            <div class="talk-title">"The Problem of Forgetting"</div>
+                            <div class="talk-links">
+                                <a href="https://drive.google.com/file/d/11icT8gcph_zHcc5Bcwb5neQGGZcGsXMv/view">Handout</a>
+                            </div>
+                            <div class="talk-location">2008 Lund-Rutgers Graduate Philosophy Conference, Lund University, Sweden</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

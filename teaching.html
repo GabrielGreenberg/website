@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Teaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            background: url(images/purple.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100%;
+        }
+        /* Fix for iOS/tablet/mobile background-attachment: fixed issue */
+        @media screen and (max-width: 1024px) {
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .page-title {
+            color: black;
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0 0 25px 0;
+        }
+        .course-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .section-label {
+            width: 160px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 2px;
+        }
+        .courses-column {
+            flex: 1;
+            min-width: 0;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .course-section {
+            margin-bottom: 10px;
+        }
+        .course-section:last-child {
+            margin-bottom: 0;
+        }
+        .seminar-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .seminar-row:last-child {
+            margin-bottom: 0;
+        }
+        .year-column {
+            width: 40px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-size: 14px;
+        }
+        .course-title {
+            color: black;
+            font-weight: 400;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .course-title a {
+            color: navy;
+            text-decoration: none;
+        }
+        .course-title a:hover {
+            text-decoration: underline;
+        }
+        .course-description {
+            margin-bottom: 0;
+            line-height: 1.6;
+            margin-left: 20px;
+            color: #444;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            /* Menu: keep horizontal, make compact */
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+
+            /* Content wrapper: wider on mobile */
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+
+            /* Main cell adjustments */
+            .main-cell {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            /* Course rows: stack label above courses */
+            .course-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .section-label {
+                width: 100%;
+                padding-top: 0;
+                font-size: 15px;
+            }
+
+            /* Content padding adjustments */
+            .content {
+                padding: 15px 10px 30px 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Extra small screens */
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+
+            /* Tighter padding */
+            .main-cell {
+                padding: 15px;
+            }
+
+            /* Typography adjustments */
+            .page-title {
+                font-size: 20px;
+            }
+            .course-title {
+                font-size: 14px;
+            }
+            .course-description {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            /* Seminar row adjustments */
+            .seminar-row {
+                gap: 10px;
+            }
+            .year-column {
+                width: 35px;
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html" class="active">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <h1 class="page-title">Teaching</h1>
+                <hr class="section-divider">
+
+                <div class="course-row">
+                    <div class="section-label">Undergraduate Courses</div>
+                    <div class="courses-column">
+                        <div class="course-section">
+                            <div class="course-title">
+                                <a href="https://www.introphilosophyofmind.com/">Introduction to Philosophy of Mind</a>
+                            </div>
+                        </div>
+
+                        <div class="course-section">
+                            <div class="course-title">
+                                <a href="http://www.makingminds.org/">Introduction to Theory of Computation</a>
+                            </div>
+                        </div>
+
+                        <div class="course-section">
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/138-course-policies.html">Philosophy of Visual Representation</a>
+                            </div>
+                        </div>
+
+                        <div class="course-section">
+                            <div class="course-title">
+                                <a href="https://iconic-symbolic.weebly.com/">Iconic / Symbolic</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="course-row">
+                    <div class="section-label">Graduate Seminars</div>
+                    <div class="courses-column">
+                        <div class="seminar-row">
+                            <div class="year-column">2023</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/mental-iconicity-2023.html">Mental Iconicity</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2023</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/visual-signs-2023.html">Visual Signs</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2022</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/emotions-and-their-expression-2022.html">Emotions and Their Expression</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2021</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/non-linguistic-representation-2021.html">Non-Linguistic Representation</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2020</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/visual-narrative-2020.html">Visual Narrative</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2018</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/visual-objects-2018.html">Visual Objects</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2018</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/indexicality-2018.html">Indexicality</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2017</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/naturalizing-intentionality-2017.html">Naturalizing Intentionality</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2015</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/iconicsymbolic-2015.html">Iconic/symbolic</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2013</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/pictorial-semantics-2013.html">Pictorial Semantics</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2013</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/the-semantics-of-irreality-2013.html">The Semantics of Irreality</a>
+                            </div>
+                        </div>
+
+                        <div class="seminar-row">
+                            <div class="year-column">2012</div>
+                            <div class="course-title">
+                                <a href="https://www.metadillo.org/cognition-2012.html">Computation and Cognition</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

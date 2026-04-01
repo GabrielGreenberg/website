@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Page Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM - Gabriel Greenberg Website
+           ===========================================
+
+           COLORS:
+           - Primary text: rgb(88,88,88)
+           - Secondary text: #666
+           - Dark text: #444
+           - Headings: black
+           - Links: navy
+           - Active page: #9966ff (violet)
+
+           SPACING:
+           - Gap between cells: 20px
+           - Cell padding: 20px
+           - Content padding: 20px sides, 40px bottom
+           - Menu top margin: 10px
+           - Border radius: 8px
+
+           BACKGROUNDS:
+           - Cells: white (solid)
+           - Menu bar: rgba(255,255,255,0.8)
+           - Content wrapper: rgba(255,255,255,0.5)
+
+           TYPOGRAPHY:
+           - Font: Inter (Google Fonts)
+           - Body: 14px, weight 400
+           - Menu: 14pt, weight 500
+           - Headings: weight 500
+           - Line height: 1.5 (body), 1.6 (bio text)
+
+           MAX WIDTHS:
+           - Content area: 1000px
+           - Width: 80%
+
+           =========================================== */
+
+        html {
+            background: url(images/purple.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100%;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 1000px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #9966ff;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 1000px;
+            margin: 10px auto 20px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .page-title {
+            color: black;
+            font-weight: 500;
+            font-size: 22px;
+            margin: 0 0 20px 0;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <h1 class="page-title">Page Title</h1>
+                <p>Page content goes here.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

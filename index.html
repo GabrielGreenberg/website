@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM - Gabriel Greenberg Website
+           ===========================================
+
+           COLORS:
+           - Primary text: rgb(88,88,88)
+           - Secondary text: #666
+           - Dark text: #444
+           - Headings: black
+           - Links: navy
+           - Active page: #7850c9 (violet)
+
+           SPACING:
+           - Gap between cells: 20px
+           - Cell padding: 20px (bio-section: 30px)
+           - Content padding: 20px sides, 60px bottom
+           - Border radius: 8px
+
+           BACKGROUNDS:
+           - Cells: white (solid)
+           - Menu bar: rgba(255,255,255,0.8)
+           - Content wrapper: rgba(255,255,255,0.5)
+
+           TYPOGRAPHY:
+           - Font: Inter (Google Fonts)
+           - Body: 14px, weight 400
+           - Menu: 14pt, weight 500
+           - Headings: weight 500
+           - Line height: 1.5 (body), 1.6 (bio text)
+
+           MAX WIDTHS:
+           - Content area: 1000px
+           - Width: 80%
+
+           =========================================== */
+
+        html {
+            background: url(images/purple.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100%;
+        }
+        /* Fix for iOS/tablet/mobile background-attachment: fixed issue */
+        @media screen and (max-width: 1024px) {
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .logo {
+            width: 300pt;
+            display: block;
+            margin: 50px auto 20px;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 710px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 20px;
+        }
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 20px;
+        }
+        .column {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        .textbook-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .textbook-desc {
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .textbook-links {
+            font-size: 13px;
+            white-space: nowrap;
+            margin-right: 15px;
+        }
+        .textbook-links a {
+            color: navy;
+        }
+        .bio-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .about-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .bio-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .bio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .bio-name {
+            color: black;
+            font-weight: 500;
+            font-size: 22px;
+            margin: 0 0 5px 0;
+        }
+        .bio-title {
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+        }
+        .bio-text {
+            line-height: 1.6;
+            color: #444;
+            margin: 0;
+        }
+        .bio-email {
+            color: navy;
+            font-size: 13px;
+        }
+        .content-title {
+            color: black;
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 0;
+        }
+        .spaced-list {
+            padding-left: 15px;
+        }
+        .spaced-list li {
+            margin-bottom: 15px;
+        }
+        .paper-info {
+            color: #666;
+            font-size: 12px;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .logo-container {
+    		position: relative;
+    		height: 300px; /* control this to adjust the height of the logo area */
+  		 	text-align: center;
+ 		  	margin-top: 50px; /* space above graphic */
+ 		  	margin-bottom: 20px; /* space between graphic and menu */
+		}
+		.logo-image {
+		    position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+    		height: 100%; /* makes the image fill the container */
+ 		  	z-index: -1;
+		    opacity: 1; /* optional: fade it slightly behind text */
+        }
+        .footer {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 1000px;
+            min-height: 50px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+            border-radius: 0;
+        }
+        .copyright {
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            /* Menu: keep horizontal, make compact */
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+
+            /* Logo area: reduce height but more top margin */
+            .logo-container {
+                height: 200px;
+                margin-top: 30px;
+            }
+
+            /* Content wrapper: wider on mobile */
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+
+            /* Main content: stack columns */
+            .main-content {
+                flex-direction: column;
+                max-width: 100%;
+            }
+
+            /* Content padding adjustments */
+            .content {
+                padding: 15px 15px 30px 15px;
+            }
+
+            /* Bio section */
+            .bio-section {
+                padding: 20px;
+            }
+            .bio-image {
+                width: 120px;
+                height: 120px;
+            }
+            .bio-name {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            /* Extra small screens */
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+
+            /* Logo: even smaller but more top margin */
+            .logo-container {
+                height: 150px;
+                margin-top: 40px;
+            }
+
+            /* Cells: tighter padding */
+            .cell, .column, .about-section {
+                padding: 15px;
+            }
+
+            /* Typography adjustments */
+            .content-title {
+                font-size: 15px;
+            }
+            .bio-text, .textbook-desc {
+                font-size: 13px;
+            }
+            .spaced-list {
+                padding-left: 12px;
+            }
+            .spaced-list li {
+                margin-bottom: 12px;
+            }
+        }
+
+    </style></head>
+<body>
+	<div class="logo-container">
+    	<img src="images/cy.png" alt="Logo" class="logo-image">
+    </div>
+
+    <div class="menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html">Events</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-content">
+                <div class="left-column">
+                    <div class="bio-section">
+                        <div class="bio-image">
+                            <img src="images/me9.jpg" alt="Gabriel Greenberg">
+                        </div>
+                        <h2 class="bio-name">Gabriel Greenberg</h2>
+                        <p class="bio-title">Associate Professor<br><a href="http://www.philosophy.ucla.edu/">Department of Philosophy</a>, <a href="http://www.ucla.edu/">UCLA</a></p>
+                        <a href="mailto:ggreenberg@humnet.ucla.edu" class="bio-email">ggreenberg@humnet.ucla.edu</a>
+                    </div>
+                    <div class="about-section">
+                        <p class="bio-text">
+                            I study iconic representation and computational approaches to the mind.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="column">
+                        <h3 class="content-title">Recent Papers</h3>
+                        <ul class="spaced-list">
+                            <li><a href="docs/iconic-symbolic.pdf" target="_blank">The Iconic-Symbolic Spectrum</a><br>
+                                <span class="paper-info"><i>Philosophical Review</i> 132(4), 2023</span></li>
+                            <li><a href="docs/structure_mind.pdf" target="_blank">The Structure of Visual Content</a><br>
+                                <span class="paper-info">forthcoming, <i>Mind</i></span></li>
+                            <li><a href="docs/maps.pdf" target="_blank">Map Semantics and the Geography of Meaning</a><br>
+                                <span class="paper-info"><i>Oxford Handbook of Applied Philosophy of Language</i>, 2024</span></li>
+                            <li><a href="docs/coherence.pdf" target="_blank">Spatial Coherence in Narrative Film</a><br>
+                                <span class="paper-info"><i>Discourse and Coherence</i> (ed. Preyer)</span></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <div class="textbook-header">
+                            <h3 class="content-title" style="margin-bottom: 0;">Making Minds</h3>
+                            <span class="textbook-links">
+                                <a href="https://drive.google.com/file/d/1-3KkADuTI50r31s07inzsUqsnhhCwooF/view?usp=sharing">Textbook</a> · <a href="http://www.makingminds.org/">Course Website</a>
+                            </span>
+                        </div>
+                        <p class="textbook-desc">An illustrated textbook introduction to the formal theory of computation and the computational theory of mind.</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
