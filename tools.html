@@ -11,7 +11,7 @@
       gtag('config', 'G-GQ900QDSEE');
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Greenberg - CV</title>
+    <title>Gabriel Greenberg - Tools</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -106,41 +106,41 @@
             color: black;
             font-weight: 600;
             font-size: 22px;
-            margin: 0 0 10px 0;
+            margin: 0 0 25px 0;
         }
         .section-divider {
             border: none;
             border-top: 1px solid #ccc;
             margin: 20px 0;
         }
-        .pdf-container {
-            width: 100%;
-            height: 800px;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
+        .tool-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
         }
-        .pdf-viewer {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .tool-name {
+            width: 160px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 1.4;
+            padding-top: 2px;
         }
-        .pdf-fallback {
-            display: none;
-            text-align: center;
-            padding: 20px;
-            color: #666;
+        .tool-name a {
+            color: #7744bb;
+            text-decoration: none;
         }
-        .pdf-fallback a {
-            color: navy;
+        .tool-name a:hover {
+            text-decoration: underline;
         }
-        /* Show fallback on tablets/mobile */
-        @media screen and (max-width: 1024px) {
-            .pdf-container {
-                display: none;
-            }
-            .pdf-fallback {
-                display: block;
-            }
+        .tool-description {
+            flex: 1;
+            min-width: 0;
+            color: #444;
+            line-height: 1.6;
+            font-size: 15px;
+            padding-top: 2px;
         }
         a {
             color: navy;
@@ -156,7 +156,6 @@
            =========================================== */
 
         @media screen and (max-width: 768px) {
-            /* Menu: keep horizontal, make compact */
             .menu {
                 flex-wrap: wrap;
                 gap: 5px;
@@ -168,33 +167,29 @@
                 padding: 6px 10px;
                 font-size: 11pt;
             }
-
-            /* Content wrapper: wider on mobile */
             .content-wrapper {
                 width: 95%;
                 margin: 10px auto;
                 box-sizing: border-box;
             }
-
-            /* Main cell adjustments */
             .main-cell {
                 padding: 20px;
                 max-width: 100%;
             }
-
-            /* PDF viewer: adjust height for mobile */
-            .pdf-container {
-                height: 600px;
+            .tool-row {
+                flex-direction: column;
+                gap: 6px;
             }
-
-            /* Content padding adjustments */
+            .tool-name {
+                width: 100%;
+                padding-top: 0;
+            }
             .content {
                 padding: 15px 10px 30px 10px;
             }
         }
 
         @media screen and (max-width: 480px) {
-            /* Extra small screens */
             .menu {
                 width: 95%;
                 gap: 2px;
@@ -204,47 +199,43 @@
                 padding: 5px 7px;
                 font-size: 10pt;
             }
-
-            /* Tighter padding */
             .main-cell {
                 padding: 15px;
             }
-
-            /* PDF viewer: smaller on phone */
-            .pdf-container {
-                height: 500px;
-            }
-
-            /* Typography adjustments */
             .page-title {
                 font-size: 20px;
             }
+            .tool-name,
+            .tool-description {
+                font-size: 14px;
+            }
         }
-
     </style>
 </head>
 <body>
     <div class="menu">
         <a href="index.html">Home</a>
-        <a href="cv.html" class="active">CV</a>
+        <a href="cv.html">CV</a>
         <a href="papers.html">Papers</a>
         <a href="teaching.html">Teaching</a>
         <a href="talks.html">Talks</a>
         <a href="events.html">Events</a>
-        <a href="tools.html">Tools</a>
+        <a href="tools.html" class="active">Tools</a>
     </div>
 
     <div class="content-wrapper">
         <div class="content">
             <div class="main-cell">
-                <h1 class="page-title">CV</h1>
+                <h1 class="page-title">Tools</h1>
                 <hr class="section-divider">
-                <div class="pdf-container">
-                    <iframe src="cv.pdf#toolbar=0&navpanes=0&scrollbar=0" class="pdf-viewer"></iframe>
-                </div>
-                <div class="pdf-fallback">
-                    <p>PDF viewer not available on this device.</p>
-                    <p><a href="cv.pdf">Download CV (PDF)</a></p>
+
+                <div class="tool-row">
+                    <div class="tool-name">
+                        <a href="tools/virgil/virgil.html">Virgil</a>
+                    </div>
+                    <div class="tool-description">
+                        AI-assisted visual LaTeX editor for academic writing.
+                    </div>
                 </div>
             </div>
         </div>
