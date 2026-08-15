@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GQ900QDSEE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GQ900QDSEE');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Greenberg - Computation and Cognition (2012)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            background: url(images/purple.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 100%;
+        }
+        /* Fix for iOS/tablet/mobile background-attachment: fixed issue */
+        @media screen and (max-width: 1024px) {
+            html {
+                background: none;
+                height: auto;
+                min-height: 100%;
+            }
+            body {
+                background: url(images/purple.jpg) no-repeat center top;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                min-height: 100vh;
+            }
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: rgb(88,88,88);
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .menu {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 0 auto;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+        }
+        .menu a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            font-size: 14pt;
+            text-transform: none;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .menu a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+        }
+        .menu a.active {
+            color: #7744bb;
+            background-color: white;
+        }
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.5);
+            width: 80%;
+            max-width: 800px;
+            margin: 10px auto 80px auto;
+            border-radius: 8px;
+        }
+        .content {
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            overflow: auto;
+        }
+        .main-cell {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .page-title {
+            color: black;
+            font-weight: 600;
+            font-size: 22px;
+            margin: 0 0 5px 0;
+        }
+        .course-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .section-divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        .info-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .section-label {
+            width: 120px;
+            flex-shrink: 0;
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.4;
+            padding-top: 2px;
+        }
+        .info-column {
+            flex: 1;
+            min-width: 0;
+            color: #444;
+            line-height: 1.6;
+        }
+        .info-column p {
+            margin: 0 0 10px 0;
+        }
+        .info-column p:last-child {
+            margin-bottom: 0;
+        }
+        .session-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .session-row:last-child {
+            margin-bottom: 0;
+        }
+        .session-label {
+            width: 120px;
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .session-date {
+            color: #7744bb;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .session-handout {
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .session-column {
+            flex: 1;
+            min-width: 0;
+        }
+        .session-title {
+            color: black;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+        .reading-list {
+            margin: 0;
+            padding-left: 18px;
+            color: #444;
+            line-height: 1.6;
+        }
+        .reading-list li {
+            margin-bottom: 4px;
+        }
+        .reading-list li:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: navy;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===========================================
+           RESPONSIVE STYLES - Mobile & Tablet
+           =========================================== */
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 10px 0;
+                width: 95%;
+                box-sizing: border-box;
+            }
+            .menu a {
+                padding: 6px 10px;
+                font-size: 11pt;
+            }
+            .content-wrapper {
+                width: 95%;
+                margin: 10px auto;
+                box-sizing: border-box;
+            }
+            .main-cell {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .info-row, .session-row {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .section-label, .session-label {
+                width: 100%;
+                padding-top: 0;
+            }
+            .session-handout {
+                margin-top: 0;
+            }
+            .content {
+                padding: 15px 10px 30px 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .menu {
+                width: 95%;
+                gap: 2px;
+                padding: 8px 0;
+            }
+            .menu a {
+                padding: 5px 7px;
+                font-size: 10pt;
+            }
+            .main-cell {
+                padding: 15px;
+            }
+            .page-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="papers.html">Papers</a>
+        <a href="teaching.html" class="active">Teaching</a>
+        <a href="talks.html">Talks</a>
+        <a href="events.html">Events</a>
+        <a href="tools.html">Tools</a>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+            <div class="main-cell">
+                <h1 class="page-title">Computation and Cognition</h1>
+                <div class="course-subtitle">Graduate Seminar &bull; PHIL 281: Philosophy of Mind &bull; Winter 2012 &bull; UCLA</div>
+
+                <hr class="section-divider">
+
+                <div class="info-row">
+                    <div class="section-label">About</div>
+                    <div class="info-column">
+                        <p>Prof. Gabriel Greenberg</p>
+                        <p><strong>When:</strong> Mon 3&ndash;5:50<br>
+                        <strong>Where:</strong> Dodd 399</p>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="info-row">
+                    <div class="section-label"><a href="https://drive.google.com/file/d/13HhQ7DMWF_0mt2uR7Hp1QGfFn1HyuCyc/view?usp=drive_link">Syllabus</a></div>
+                    <div class="info-column">
+                        <p><strong>Course description:</strong> The seminar will investigate the philosophical foundations of contemporary cognitive science as it has emerged over the last 60 years. Proceeding in rough chronological order, we will work through a number of writings by philosophers, linguists, computer scientists, and psychologists. Arguably, the keystone of this scientific movement is the hypothesis that human and animal cognition can be profitably explained by models originally developed in the theory of computation. This hypothesis will be the central topic of the seminar. Just as computational processes can be described at multiple levels of abstraction, psychologists in the computational tradition have found it natural to distinguish multiple levels of explanation within psychological theories, and to attribute multiple levels of representation to psychological subjects. A goal of the course will be to understand the philosophical significance of such levels. Of special interest for us will be the relationship between syntactic levels of explanation and representation, and semantic levels of explanation and representation.</p>
+                    </div>
+                </div>
+
+                <hr class="section-divider">
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">1/9</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/15bts0uqw8UUfBzonTS6q3_SXDHnGyRVm/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">1. Models of Computation</div>
+                        <ul class="reading-list">
+                            <li>Helmholtz (1867) <a href="https://drive.google.com/file/d/1C6t4nXANOzNG4EHpAlraSAmjLNlMsnpc/view?usp=drive_link"><em>Treatise on Physiological Optics</em></a></li>
+                            <li>Turing (1950) <a href="https://drive.google.com/file/d/16mUNA_hpgfJWXdDfbyfNwllUAka_CRV3/view?usp=drive_link">&ldquo;Computing machinery and intelligence&rdquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">1/23</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/1G-dakJ43anNlaoO9p2aMFOPzFhAV472p/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">2. Computation and Automata</div>
+                        <ul class="reading-list">
+                            <li>Chomsky (1957) <a href="https://drive.google.com/file/d/1QFuT3y4Fy2vnY8Hu09-9_brOIyIpueW1/view?usp=drive_link"><em>Syntactic Structures</em></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">1/30</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/1cbXDhX7i8OI61y_CzBhT7WOiNfN1FyDd/view?usp=drive_link">Handout 1</a></div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/1SuxxhRXwdl1p6oOdJxwzzl_O75bTqITT/view?usp=drive_link">Handout 2</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">3. Computational Explanations</div>
+                        <ul class="reading-list">
+                            <li>Chomsky (1965) <a href="https://drive.google.com/file/d/1K3O_Oc8rkxvaKfvTlqP_A0oDVkX43LBM/view?usp=drive_link"><em>Aspects of the Theory of Syntax</em></a></li>
+                            <li>Putnam (1975) <a href="https://drive.google.com/file/d/1oNeVnF8pGpBsDdeKq7G3FjNYrBm415qw/view?usp=drive_link">&ldquo;Philosophy and our Mental Life&rdquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">2/6</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/18jntDS7Qw--yOiaKQhgK_c2YgMJumEGy/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">4. Language of Thought</div>
+                        <ul class="reading-list">
+                            <li>Fodor (1975) <a href="https://drive.google.com/file/d/1CjdYBlO2dFQzAdT3JhQcD_QaMacxJ5UH/view?usp=drive_link"><em>The Language of Thought</em></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">2/13</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/18t0sz6lXUOi7SfpMz0mzOhbSZC43Ls75/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">5. The Knowledge Level</div>
+                        <ul class="reading-list">
+                            <li>Newell and Simon (1976) <a href="https://drive.google.com/file/d/1tTR3rEc2iYgi--XU6o6viek_NRfGaq84/view?usp=drive_link">&ldquo;Computer science as empirical inquiry: Symbols and search&rdquo;</a></li>
+                            <li>Newell (1982) <a href="https://drive.google.com/file/d/1dBPqeXhEU-HRy7uMNdgOEsuxgV2KRNjI/view?usp=drive_link">&ldquo;The knowledge level&rdquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">2/20</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/1HddJgT5MQMEgqwLLVszr7iSJcwcGUT1A/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">6. Levels of Explanation</div>
+                        <ul class="reading-list">
+                            <li>Marr (1982) <a href="https://drive.google.com/file/d/1iatbC5FfVS8NDU_2wDQQ9JBEaFerTZFh/view?usp=drive_link"><em>Vision</em></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">3/5</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/19O7B2GcI8RSpU_1RdqzEbI2mckFuzSsi/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">7. Externalism</div>
+                        <ul class="reading-list">
+                            <li>Burge (1986) <a href="https://drive.google.com/file/d/1ejG_QnJSg9_c2FJEzkNUYiqle3H4GcPW/view?usp=drive_link">&ldquo;Individualism and psychology&rdquo;</a></li>
+                            <li>Egan (1995) <a href="https://drive.google.com/file/d/1XOjpJfezmxS_nt--FhiWW3XzzzB4LIzk/view?usp=drive_link">&ldquo;Computation and content&rdquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="session-row">
+                    <div class="session-label">
+                        <div class="session-date">3/12</div>
+                        <div class="session-handout"><a href="https://drive.google.com/file/d/1bPDknGndI_ZCUzyrm4O_FsGI9eulTXql/view?usp=drive_link">Handout</a></div>
+                    </div>
+                    <div class="session-column">
+                        <div class="session-title">8. Computationalism</div>
+                        <ul class="reading-list">
+                            <li>Pylyshyn (1986) <a href="https://drive.google.com/file/d/1PNfm06XqvuA1f0KJq2820uS_qhl72hkM/view?usp=drive_link"><em>Computation and Cognition: Toward a Foundation for Cognitive Science</em></a></li>
+                            <li>Churchland and Sejnowski (1990) <a href="https://drive.google.com/file/d/1-r15u42OZO4FDEbBkuAd_44i4SsSSVsk/view?usp=drive_link">&ldquo;Neural representation and neural computation&rdquo;</a></li>
+                            <li>Gallistel and King (2009) <a href="https://drive.google.com/file/d/1pppq5H2Z2L2ix9ZOaU20Dzwj2DOE8WU7/view?usp=drive_link"><em>Memory and the Computational Brain</em></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
