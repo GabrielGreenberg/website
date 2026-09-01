@@ -36,75 +36,11 @@
             text-decoration: underline;
         }
 
-        /* ============ NAV ============ */
-        .topnav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px 20px;
-        }
-        .topnav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
-        .topnav > ul > li {
-            position: relative;
-        }
-        .topnav > ul > li > a {
-            display: block;
-            padding: 4px 15px;
-            font-size: 16px;
-            line-height: 32px;
-            color: #1382d6;
-        }
-        .topnav > ul > li > a:hover {
-            text-decoration: none;
-            color: #0f6bb0;
-        }
-        /* dropdowns */
-        .topnav li ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #fff;
-            border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            min-width: 250px;
-            padding: 6px 0;
-        }
-        .topnav li:hover > ul {
-            display: block;
-        }
-        .topnav li ul li a {
-            display: block;
-            padding: 6px 18px;
-            font-size: 15px;
-            line-height: 24px;
-            color: #3f3f3f;
-            white-space: nowrap;
-        }
-        .topnav li ul li a:hover {
-            color: #1382d6;
-            text-decoration: none;
-        }
-        .topnav li ul li a.current {
-            color: #1382d6;
-            font-weight: 700;
-        }
-
         /* ============ BANNER ============ */
         .banner {
             background: url(images/sun.jpg) no-repeat;
-            background-position: 50% 50%;
-            background-size: cover;
+            background-position: top center;
+            background-size: 100% auto;
             min-height: 340px;
             display: flex;
             align-items: center;
@@ -189,13 +125,6 @@
             }
         }
         @media screen and (max-width: 768px) {
-            .topnav {
-                padding: 15px 10px;
-            }
-            .topnav > ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
             .banner {
                 min-height: 240px;
             }
@@ -219,46 +148,6 @@
     </style>
 </head>
 <body>
-
-    <nav class="topnav">
-        <ul>
-            <li><a href="https://www.metadillo.org/">Home</a></li>
-            <li><a href="#">Classes</a>
-                <ul>
-                    <li><a href="https://www.metadillo.org/visual-signs.html">Visual Signs</a></li>
-                    <li><a href="http://makingminds.org">Computational Theory of Mind</a></li>
-                    <li><a href="http://introphilosophyofmind.com">Introduction to Philosophy of Mind</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Seminars</a>
-                <ul>
-                    <li><a href="cognition-computation-2026.html" class="current">Cognition &amp; Computation (2026)</a></li>
-                    <li><a href="https://www.metadillo.org/mental-iconicity-2026.html">Mental Iconicity (2026)</a></li>
-                    <li><a href="https://www.metadillo.org/mental-iconicity-2023.html">Mental Iconicity (2023)</a></li>
-                    <li><a href="https://www.metadillo.org/visual-signs-2023.html">Visual Signs (2023)</a></li>
-                    <li><a href="https://www.metadillo.org/emotions-and-their-expression-2022.html">Emotions and their Expression (2022)</a></li>
-                    <li><a href="https://www.metadillo.org/non-linguistic-representation-2021.html">Non-Linguistic Representation (2021)</a></li>
-                    <li><a href="https://www.metadillo.org/visual-narrative-2020.html">Visual Narrative (2020)</a></li>
-                    <li><a href="https://www.metadillo.org/visual-objects-2018.html">Visual Objects (2018)</a></li>
-                    <li><a href="https://www.metadillo.org/indexicality-2018.html">Indexicality (2018)</a></li>
-                    <li><a href="https://www.metadillo.org/naturalizing-intentionality-2017.html">Naturalizing Intentionality (2017)</a></li>
-                    <li><a href="https://www.metadillo.org/iconicsymbolic-2015.html">Iconic/Symbolic (2015)</a></li>
-                    <li><a href="https://www.metadillo.org/pictorial-semantics-2013.html">Pictorial Semantics (2013)</a></li>
-                    <li><a href="https://www.metadillo.org/the-semantics-of-irreality-2013.html">The Semantics of Irreality (2013)</a></li>
-                    <li><a href="computation-cognition-2012.html">Computation &amp; Cognition (2012)</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Workshops</a>
-                <ul>
-                    <li><a href="http://gjgreenberg.bol.ucla.edu/visnar/">Visual Narrative (2012)</a></li>
-                    <li><a href="https://www.metadillo.org/iconicity-2015.html">Iconicity (2015)</a></li>
-                    <li><a href="https://infoslime.weebly.com/slime-1.html">SLIME 1 (2022)</a></li>
-                    <li><a href="https://infoslime.weebly.com/">SLIME 2 (2023)</a></li>
-                    <li><a href="https://www.metadillo.org/iconicity-and-cognition-2023.html">Iconicity and Cognition (2023)</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
 
     <header class="banner">
         <h1 id="banner-title">Cognition &amp; Computation</h1>
