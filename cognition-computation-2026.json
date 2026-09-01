@@ -1,0 +1,85 @@
+{
+  "course": {
+    "title": "Cognition and Computation",
+    "instructor": "Prof. Gabriel Greenberg",
+    "listing": "PHIL 286: Philosophy of Psychology",
+    "term": "Fall 2026",
+    "institution": "UCLA",
+    "when": "Thu 2:00-4:50",
+    "where": "TBD",
+    "syllabusUrl": "",
+    "description": "This seminar introduces students to philosophical ideas at the foundations of cognitive science. We will focus on the Computational Theory of Mind, the position that cognition is rooted in biological computation. And we will approach these issues through the lens of classic theoretical texts from the last 50 years, including works by Craik, Turing, Chomsky, Marr, Fodor, and others. This literature will be interleaved with contemporary real-world cases from cognitive science, including the face recognition network, cognitive maps in the hippocampus, and semantic priming. The last three weeks of the course will focus on understanding contemporary AI models, including neural networks and transformer architectures, and comparing them to human and animal cognition."
+  },
+  "sessions": [
+    {
+      "number": 1,
+      "title": "Craik and Turing on Mental Computation",
+      "date": "9/24",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 2,
+      "title": "Chomsky on Algorithms for Language Production",
+      "date": "10/1",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 3,
+      "title": "Marr on Levels of Abstraction in Vision Science",
+      "date": "10/8",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 4,
+      "title": "Case Study: Face Recognition",
+      "date": "10/15",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 5,
+      "title": "Pylyshyn on Semantic Abstraction",
+      "date": "10/22",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 6,
+      "title": "Fodor on Modularity",
+      "date": "10/29",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 7,
+      "title": "Dreyfus on Context Sensitivity",
+      "date": "11/5",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 8,
+      "title": "Case Study: Neural Nets",
+      "date": "11/12",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 9,
+      "title": "Case Study: Transformer Architecture",
+      "date": "11/19",
+      "handouts": [],
+      "readings": []
+    },
+    {
+      "number": 10,
+      "title": "Distributed Thought",
+      "date": "12/3",
+      "handouts": [],
+      "readings": []
+    }
+  ]
+}
