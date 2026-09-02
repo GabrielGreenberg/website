@@ -31,6 +31,15 @@
           "style": "quotes",
           "detail": ", <i>Mind</i> 59: 433&ndash;460",
           "url": "docs/cc2026/turing-1950-computing-machinery-and-intelligence.pdf"
+        },
+        {
+          "author": "Rescorla",
+          "year": "2020",
+          "title": "The Computational Theory of Mind",
+          "style": "quotes",
+          "detail": ", <i>Stanford Encyclopedia of Philosophy</i>",
+          "url": "https://plato.stanford.edu/entries/computational-mind/",
+          "tag": "recommended"
         }
       ]
     },
