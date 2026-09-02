@@ -117,6 +117,17 @@
         ul.readings li {
             margin-bottom: 2px;
         }
+        .reading-tag {
+            color: #999;
+            font-size: 15px;
+        }
+        .session-note {
+            margin-top: 18px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #8a8a8a;
+            font-style: italic;
+        }
 
         /* ============ RESPONSIVE ============ */
         @media screen and (max-width: 900px) {
@@ -188,7 +199,21 @@
             if (reading.url && title) {
                 title = `<a href="${reading.url}">${title}</a>`;
             }
-            return `<li>${citation} ${title}</li>`;
+            let entry = `${citation} ${title}`;
+            if (reading.detail) {
+                entry += reading.detail;
+            }
+            return `<li>${entry}</li>`;
+        }
+
+        function renderReadingGroup(readings, tag, label) {
+            const group = readings.filter(r => (r.tag || 'main') === tag);
+            if (group.length === 0) return '';
+            let html = `<div class="reading-label">${label}:</div>`;
+            html += '<ul class="readings">';
+            group.forEach(r => { html += renderReading(r); });
+            html += '</ul>';
+            return html;
         }
 
         function renderCourse(data) {
@@ -238,10 +263,12 @@
                     html += '</div>';
                 }
                 if (session.readings && session.readings.length > 0) {
-                    html += '<div class="reading-label">Reading:</div>';
-                    html += '<ul class="readings">';
-                    session.readings.forEach(r => { html += renderReading(r); });
-                    html += '</ul>';
+                    html += renderReadingGroup(session.readings, 'main', session.readingsLabel || 'Reading');
+                    html += renderReadingGroup(session.readings, 'recommended', 'Recommended');
+                    html += renderReadingGroup(session.readings, 'optional', 'Optional');
+                }
+                if (session.note) {
+                    html += `<div class="session-note">Note: ${session.note}</div>`;
                 }
                 html += '</div>';
                 html += '</div>';
